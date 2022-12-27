@@ -28,7 +28,7 @@ def get_daily(s: requests.Session):
         return daily.json()['d']
     else:
         print("获取昨日信息失败")
-        exit(1)
+        exit(2)
 
 
 def submit(s: requests.Session, old: dict):
