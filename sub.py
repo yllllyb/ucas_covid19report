@@ -6,6 +6,7 @@ s = requests.Session()
 
 user = "USERNAME"
 passwd = "PASSWORD"
+add = "ADDRESS"
 
 def login(s: requests.Session, username, password):
     payload = {
@@ -37,7 +38,7 @@ def submit(s: requests.Session, old: dict):
     new_daily['app_id']='ucas'
     new_daily['sfzx']='5'
     new_daily['sfjshsjc']='0'
-    new_daily['geo_api_info']="ADDRESS"
+    new_daily['geo_api_info']=add
 
 
     print("提交信息:\n", new_daily)
