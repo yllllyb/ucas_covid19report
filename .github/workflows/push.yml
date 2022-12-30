@@ -35,3 +35,11 @@ jobs:
         sed -i "s/USERNAME/${{ secrets.USERNAME }}/g" sub.py
         sed -i "s/ADDRESS/${{ secrets.ADDRESS }}/g" sub.py
         python ./sub.py >> /dev/null
+    
+    - name: Upload report
+      if: always()
+      uses: actions/upload-artifact@v2
+      with: 
+        name: test
+        path: path/
+      
