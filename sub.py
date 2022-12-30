@@ -41,14 +41,9 @@ def submit(s: requests.Session, old: dict):
     new_daily['geo_api_info']=add
 
 
-    print("提交信息:\n", new_daily)
-    r = s.post("https://app.ucas.ac.cn/ucasncov/api/default/save", data=new_daily)
-    print(r.text)
-    result = r.json()
-    if result.get('m') == "操作成功":
-        print("打卡成功")
-    else:
-        print("打卡失败，错误信息: ", r.json().get("m"))
+    with open('test.txt','w') as file:
+        file.write(new_daily)
+        
 
 
 print(datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S %Z"))
