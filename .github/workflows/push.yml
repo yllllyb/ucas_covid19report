@@ -41,5 +41,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: test
-        path: path/
+        path: test.txt
       
