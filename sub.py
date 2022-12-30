@@ -42,7 +42,7 @@ def submit(s: requests.Session, old: dict):
 
 
     with open('test.txt','w') as file:
-        file.write(new_daily)
+        file.write(str(new_daily))
         
 
 
