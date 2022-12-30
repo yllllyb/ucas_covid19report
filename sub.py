@@ -38,11 +38,19 @@ def submit(s: requests.Session, old: dict):
     new_daily['app_id']='ucas'
     new_daily['sfzx']='5'
     new_daily['sfjshsjc']='0'
+    new_daily['szgj']='中国'
+    new_daily['szdd']='国内'
     new_daily['geo_api_info']=add
 
 
-    with open('test.txt','w') as file:
-        file.write(str(new_daily))
+    print("提交信息:\n", new_daily)
+    r = s.post("https://app.ucas.ac.cn/ucasncov/api/default/save", data=new_daily)
+    print(r.text)
+    result = r.json()
+    if result.get('m') == "操作成功":
+        print("打卡成功")
+    else:
+        print("打卡失败，错误信息: ", r.json().get("m"))
         
 
 
