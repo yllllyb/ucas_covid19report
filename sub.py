@@ -6,7 +6,7 @@ s = requests.Session()
 
 user = "USERNAME"
 passwd = "PASSWORD"
-add = "ADDRESS"
+add = 'ADDRESS'
 
 def login(s: requests.Session, username, password):
     payload = {
